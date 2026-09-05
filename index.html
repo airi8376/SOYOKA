@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<title>SOYOKA（ソヨカ）｜そよ風みたいな、素肌メイク。</title>
+<meta name="description" content="10代・20代のための、ナチュラルでプチプラなコスメブランド SOYOKA（ソヨカ）。植物由来の肌にやさしい処方と、崩れにくい心地よいつけ心地を、お財布にやさしい価格で。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF6EC;
+    --cream-deep:#F3ECDA;
+    --paper:#FFFDF8;
+    --sage:#7C8F6B;
+    --sage-deep:#4E5C3F;
+    --sage-pale:#E3E9D8;
+    --blush:#E8A98D;
+    --blush-pale:#F6DDCE;
+    --butter:#EEDFA9;
+    --ink:#2E2B22;
+    --ink-soft:#65604F;
+    --line:#DDD4BE;
+    --radius-s:6px;
+    --radius-m:16px;
+    --radius-l:32px;
+    --maxw:1180px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;margin:0;padding:0;}
+  button{font-family:inherit;cursor:pointer;}
+  .serif{font-family:'Shippori Mincho', serif;}
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--sage-deep);
+    outline-offset:3px;
+  }
+
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 clamp(20px,4vw,48px);
+  }
+
+  .section-head{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    margin-bottom:clamp(28px,4vw,48px);
+  }
+  .section-tag{
+    font-size:13px;
+    letter-spacing:.14em;
+    color:var(--sage-deep);
+    font-weight:700;
+  }
+  .section-title{
+    font-family:'Shippori Mincho', serif;
+    font-size:clamp(26px,3.2vw,36px);
+    font-weight:600;
+    color:var(--ink);
+    margin:0;
+  }
+  .section-desc{
+    color:var(--ink-soft);
+    font-size:15px;
+    max-width:46em;
+    margin:0;
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(251,246,236,.88);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:14px clamp(20px,4vw,48px);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+  }
+  .logo{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    font-family:'Shippori Mincho', serif;
+    font-size:24px;
+    font-weight:700;
+    color:var(--sage-deep);
+    letter-spacing:.04em;
+  }
+  .logo span{
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    font-size:11px;
+    font-weight:400;
+    color:var(--ink-soft);
+    letter-spacing:.05em;
+  }
+  nav.main-nav{
+    display:flex;
+    align-items:center;
+    gap:clamp(16px,2.2vw,34px);
+  }
+  nav.main-nav a{
+    font-size:14.5px;
+    font-weight:700;
+    color:var(--ink);
+    position:relative;
+    padding:4px 0;
+  }
+  nav.main-nav a::after{
+    content:"";
+    position:absolute;
+    left:0;bottom:0;
+    width:0;
+    height:2px;
+    background:var(--sage);
+    transition:width .25s ease;
+  }
+  nav.main-nav a:hover::after{width:100%;}
+  .header-actions{display:flex;align-items:center;gap:14px;}
+  .icon-btn{
+    width:38px;height:38px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    background:var(--paper);
+    color:var(--sage-deep);
+  }
+  .menu-toggle{display:none;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:clamp(40px,7vw,84px) 0 clamp(30px,5vw,60px);
+    overflow:hidden;
+  }
+  .hero-inner{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:clamp(24px,4vw,60px);
+    align-items:center;
+  }
+  .hero-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--sage-pale);
+    color:var(--sage-deep);
+    font-size:13px;
+    font-weight:700;
+    padding:7px 16px;
+    border-radius:999px;
+    margin-bottom:22px;
+  }
+  .hero h1{
+    font-family:'Shippori Mincho', serif;
+    font-size:clamp(34px,5.2vw,58px);
+    line-height:1.45;
+    font-weight:700;
+    margin:0 0 22px;
+    color:var(--ink);
+  }
+  .hero p.lead{
+    font-size:16px;
+    color:var(--ink-soft);
+    max-width:32em;
+    margin:0 0 32px;
+  }
+  .hero-cta{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:14px 30px;
+    border-radius:999px;
+    font-size:14.5px;
+    font-weight:700;
+    border:1.5px solid transparent;
+    transition:transform .2s ease, background .2s ease, color .2s ease;
+  }
+  .btn-primary{background:var(--sage-deep);color:var(--paper);}
+  .btn-primary:hover{background:var(--sage);transform:translateY(-2px);}
+  .btn-outline{border-color:var(--sage-deep);color:var(--sage-deep);}
+  .btn-outline:hover{background:var(--sage-deep);color:var(--paper);}
+
+  .hero-art{
+    position:relative;
+    aspect-ratio:1/1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .hero-blob{
+    position:absolute;
+    inset:6%;
+    background:linear-gradient(160deg, var(--sage-pale), var(--butter) 70%);
+    border-radius:44% 56% 62% 38% / 48% 42% 58% 52%;
+  }
+  .hero-art svg{position:relative;width:78%;height:78%;}
+  .float-a{animation:float-a 7s ease-in-out infinite;}
+  .float-b{animation:float-b 8.5s ease-in-out infinite;}
+  @keyframes float-a{0%,100%{transform:translate(0,0) rotate(0deg);}50%{transform:translate(0,-10px) rotate(-4deg);}}
+  @keyframes float-b{0%,100%{transform:translate(0,0) rotate(0deg);}50%{transform:translate(4px,8px) rotate(3deg);}}
+  @media (prefers-reduced-motion: reduce){
+    .float-a,.float-b{animation:none;}
+  }
+
+  /* ---------- CAROUSEL (arrivals / lineup) ---------- */
+  .carousel-section{padding:clamp(50px,6vw,90px) 0;}
+  .carousel-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-bottom:clamp(24px,3vw,36px);
+    gap:20px;
+    flex-wrap:wrap;
+  }
+  .carousel-nav{display:flex;gap:10px;}
+  .carousel-track{
+    display:flex;
+    gap:18px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    padding-bottom:10px;
+    margin:0 clamp(-20px,-4vw,-48px);
+    padding-left:clamp(20px,4vw,48px);
+    padding-right:clamp(20px,4vw,48px);
+    scrollbar-width:none;
+  }
+  .carousel-track::-webkit-scrollbar{display:none;}
+
+  .product-card{
+    flex:0 0 auto;
+    width:230px;
+    scroll-snap-align:start;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--radius-m);
+    padding:20px 18px 22px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    transition:box-shadow .25s ease, transform .25s ease;
+  }
+  .product-card:hover{box-shadow:0 14px 30px -18px rgba(46,43,34,.35);transform:translateY(-3px);}
+  .product-visual{
+    height:118px;
+    border-radius:var(--radius-s);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .product-visual svg{width:56%;height:56%;}
+  .product-badge{
+    align-self:flex-start;
+    font-size:11px;
+    font-weight:700;
+    color:var(--sage-deep);
+    background:var(--sage-pale);
+    padding:3px 10px;
+    border-radius:999px;
+  }
+  .product-name{font-size:15.5px;font-weight:700;margin:0;}
+  .product-shades{display:flex;gap:6px;align-items:center;}
+  .shade-dot{width:14px;height:14px;border-radius:50%;border:1px solid rgba(0,0,0,.08);}
+  .shade-count{font-size:12px;color:var(--ink-soft);}
+  .product-price{font-size:15px;font-weight:700;color:var(--sage-deep);margin-top:auto;}
+
+  /* ---------- MESSAGE / PILLARS ---------- */
+  .message-section{
+    background:var(--sage-deep);
+    color:var(--cream);
+    padding:clamp(56px,7vw,96px) 0;
+  }
+  .message-section .section-tag{color:var(--butter);}
+  .message-section .section-title{color:var(--paper);}
+  .message-section .section-desc{color:#D8DECB;}
+  .pillars{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:clamp(20px,3vw,32px);
+  }
+  .pillar{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:var(--radius-m);
+    padding:30px 26px;
+  }
+  .pillar-icon{
+    width:52px;height:52px;
+    border-radius:50%;
+    background:rgba(255,255,255,.1);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:18px;
+  }
+  .pillar-icon svg{width:26px;height:26px;}
+  .pillar h3{
+    font-family:'Shippori Mincho', serif;
+    font-size:19px;
+    margin:0 0 10px;
+    color:var(--paper);
+  }
+  .pillar p{font-size:14px;color:#D8DECB;margin:0;}
+
+  /* ---------- COLUMN / MAGAZINE ---------- */
+  .column-section{padding:clamp(56px,7vw,96px) 0;}
+  .column-list{
+    display:flex;
+    flex-direction:column;
+    border-top:1px solid var(--line);
+  }
+  .column-item{
+    display:grid;
+    grid-template-columns:120px 1fr auto;
+    gap:22px;
+    align-items:center;
+    padding:24px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .column-item:hover .column-title{color:var(--sage-deep);}
+  .column-cat{
+    font-size:12.5px;
+    font-weight:700;
+    color:var(--sage-deep);
+    background:var(--sage-pale);
+    padding:5px 12px;
+    border-radius:999px;
+    justify-self:start;
+    white-space:nowrap;
+  }
+  .column-body{display:flex;flex-direction:column;gap:6px;}
+  .column-title{font-size:16px;font-weight:700;transition:color .2s ease;}
+  .column-date{font-size:12.5px;color:var(--ink-soft);}
+  .column-arrow{color:var(--sage-deep);font-size:20px;}
+  @media (max-width:640px){
+    .column-item{grid-template-columns:1fr auto;}
+    .column-cat{grid-column:1/2;grid-row:1;}
+    .column-body{grid-column:1/2;grid-row:2;}
+    .column-arrow{grid-row:1/3;}
+  }
+
+  /* ---------- CATEGORY GRID ---------- */
+  .category-section{padding:clamp(56px,7vw,96px) 0;background:var(--paper);}
+  .category-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+  }
+  .category-card{
+    border:1px solid var(--line);
+    border-radius:var(--radius-m);
+    padding:26px 18px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:14px;
+    text-align:center;
+    background:var(--cream);
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .category-card:hover{border-color:var(--sage);transform:translateY(-3px);}
+  .category-card svg{width:34px;height:34px;}
+  .category-card span{font-size:14px;font-weight:700;}
+
+  /* ---------- NEWS ---------- */
+  .news-section{padding:clamp(56px,7vw,96px) 0;}
+  .news-tabs{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:28px;
+  }
+  .news-tab{
+    padding:8px 18px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    font-size:13.5px;
+    font-weight:700;
+    background:var(--paper);
+    color:var(--ink-soft);
+    transition:all .2s ease;
+  }
+  .news-tab.is-active{background:var(--sage-deep);border-color:var(--sage-deep);color:var(--paper);}
+  .news-list{border-top:1px solid var(--line);}
+  .news-item{
+    display:grid;
+    grid-template-columns:110px 100px 1fr;
+    gap:18px;
+    padding:18px 0;
+    border-bottom:1px solid var(--line);
+    font-size:14.5px;
+  }
+  .news-item[hidden]{display:none;}
+  .news-date{color:var(--ink-soft);}
+  .news-cat{color:var(--sage-deep);font-weight:700;}
+  @media (max-width:640px){
+    .news-item{grid-template-columns:1fr;gap:4px;}
+  }
+
+  /* ---------- VOICE ---------- */
+  .voice-section{padding:clamp(56px,7vw,96px) 0;background:var(--sage-pale);}
+  .voice-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+  }
+  .voice-card{
+    background:var(--paper);
+    border-radius:var(--radius-m);
+    padding:26px 24px;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .voice-mark{font-family:'Shippori Mincho', serif;font-size:34px;color:var(--blush);line-height:1;}
+  .voice-text{font-size:14.5px;color:var(--ink);margin:0;flex:1;}
+  .voice-person{display:flex;align-items:center;gap:10px;}
+  .voice-avatar{
+    width:38px;height:38px;border-radius:50%;
+    background:var(--sage-pale);
+    display:flex;align-items:center;justify-content:center;
+    font-size:15px;
+  }
+  .voice-name{font-size:13px;font-weight:700;}
+  .voice-role{font-size:12px;color:var(--ink-soft);}
+
+  /* ---------- SOCIAL ---------- */
+  .social-section{padding:clamp(48px,6vw,80px) 0;text-align:center;}
+  .social-row{
+    display:flex;
+    justify-content:center;
+    gap:16px;
+    flex-wrap:wrap;
+    margin-top:24px;
+  }
+  .social-pill{
+    display:flex;align-items:center;gap:10px;
+    padding:12px 22px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    background:var(--paper);
+    font-size:14px;
+    font-weight:700;
+  }
+  .social-pill:hover{border-color:var(--sage);}
+  .social-pill svg{width:18px;height:18px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--ink);
+    color:#CFCBB9;
+    padding:clamp(48px,6vw,72px) 0 28px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1fr;
+    gap:32px;
+    padding-bottom:40px;
+    border-bottom:1px solid rgba(255,255,255,.12);
+  }
+  .footer-logo{
+    font-family:'Shippori Mincho', serif;
+    font-size:22px;
+    color:var(--paper);
+    margin-bottom:12px;
+  }
+  .footer-desc{font-size:13px;color:#A6A28F;max-width:26em;}
+  .footer-col h4{font-size:13px;color:var(--paper);margin:0 0 16px;letter-spacing:.05em;}
+  .footer-col ul{display:flex;flex-direction:column;gap:10px;}
+  .footer-col a{font-size:13.5px;color:#CFCBB9;}
+  .footer-col a:hover{color:var(--paper);}
+  .footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-top:22px;
+    font-size:12px;
+    color:#8B876F;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .footer-legal{display:flex;gap:18px;}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:960px){
+    .pillars{grid-template-columns:1fr;}
+    .category-grid{grid-template-columns:repeat(2,1fr);}
+    .voice-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:760px){
+    nav.main-nav{
+      position:fixed;
+      inset:64px 0 0 0;
+      background:var(--cream);
+      flex-direction:column;
+      align-items:flex-start;
+      padding:30px clamp(20px,6vw,40px);
+      gap:22px;
+      transform:translateX(100%);
+      transition:transform .3s ease;
+      z-index:90;
+    }
+    nav.main-nav.is-open{transform:translateX(0);}
+    nav.main-nav a{font-size:18px;}
+    .menu-toggle{
+      display:flex;
+      width:38px;height:38px;
+      align-items:center;justify-content:center;
+      border-radius:50%;
+      border:1px solid var(--line);
+      background:var(--paper);
+    }
+    .hero-inner{grid-template-columns:1fr;}
+    .hero-art{order:-1;max-width:280px;margin:0 auto;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">SOYOKA<span>ソヨカ</span></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#arrivals">ITEM</a>
+      <a href="#lineup">LINE UP</a>
+      <a href="#column">COLUMN</a>
+      <a href="#news">NEWS</a>
+      <a href="#voice">ABOUT</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" aria-label="検索する">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><line x1="21" y1="21" x2="16.6" y2="16.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="メニューを開く" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" id="menuIcon"><line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="hero-eyebrow">プチプラでも、本気で可愛く。</span>
+      <h1 class="serif">そよ風みたいな、<br>素肌メイク。</h1>
+      <p class="lead">がんばりすぎない私のための、ナチュラルコスメブランド。植物由来のやさしい処方と、崩れにくい心地よさを、お財布にやさしい価格で届けます。</p>
+      <div class="hero-cta">
+        <a href="#arrivals" class="btn btn-primary">新作アイテムを見る</a>
+        <a href="#voice" class="btn btn-outline">ブランドを知る</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="hero-blob"></div>
+      <svg viewBox="0 0 300 300" fill="none">
+        <g class="float-a">
+          <ellipse cx="150" cy="150" rx="26" ry="62" fill="#8DA377" opacity="0.9" transform="rotate(-18 150 150)"/>
+          <ellipse cx="150" cy="150" rx="26" ry="62" fill="#7C8F6B" opacity="0.55" transform="rotate(34 150 150)"/>
+        </g>
+        <g class="float-b">
+          <rect x="128" y="70" width="26" height="70" rx="13" fill="#E8A98D"/>
+          <rect x="128" y="52" width="26" height="26" rx="10" fill="#D9876A"/>
+          <ellipse cx="215" cy="205" rx="34" ry="26" fill="#F6DDCE"/>
+          <circle cx="215" cy="205" r="14" fill="#EEDFA9"/>
+          <circle cx="92" cy="210" r="20" fill="#4E5C3F" opacity="0.85"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NEW ARRIVALS ================= -->
+<section class="carousel-section" id="arrivals">
+  <div class="wrap">
+    <div class="carousel-head">
+      <div class="section-head" style="margin-bottom:0;">
+        <span class="section-tag">New Arrivals</span>
+        <h2 class="section-title serif">新作アイテム</h2>
+      </div>
+      <div class="carousel-nav">
+        <button class="icon-btn" id="arrivalsPrev" aria-label="前へ">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="icon-btn" id="arrivalsNext" aria-label="次へ">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="carousel-track" id="arrivalsTrack">
+
+      <div class="product-card">
+        <div class="product-visual" style="background:var(--sage-pale);">
+          <svg viewBox="0 0 100 100" fill="none"><rect x="40" y="30" width="20" height="46" rx="9" fill="#D9876A"/><rect x="40" y="18" width="20" height="18" rx="8" fill="#E8A98D"/></svg>
+        </div>
+        <span class="product-badge">NEW</span>
+        <p class="product-name">うるつやミルクティント</p>
+        <div class="product-shades">
+          <span class="shade-dot" style="background:#E8A98D;"></span>
+          <span class="shade-dot" style="background:#D9876A;"></span>
+          <span class="shade-dot" style="background:#C97C7C;"></span>
+          <span class="shade-count">全6色</span>
+        </div>
+        <span class="product-price">¥880（税込）</span>
+      </div>
+
+      <div class="product-card">
+        <div class="product-visual" style="background:var(--butter);">
+          <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="52" r="28" fill="#F6DDCE"/><circle cx="50" cy="52" r="12" fill="#E8A98D"/></svg>
+        </div>
+        <span class="product-badge">NEW</span>
+        <p class="product-name">ふわさらチークバーム</p>
+        <div class="product-shades">
+          <span class="shade-dot" style="background:#F0BFA8;"></span>
+          <span class="shade-dot" style="background:#E8A98D;"></span>
+          <span class="shade-dot" style="background:#D99B9B;"></span>
+          <span class="shade-count">全4色</span>
+        </div>
+        <span class="product-price">¥990（税込）</span>
+      </div>
+
+      <div class="product-card">
+        <div class="product-visual" style="background:var(--sage-pale);">
+          <svg viewBox="0 0 100 100" fill="none"><rect x="20" y="46" width="60" height="8" rx="4" fill="#4E5C3F"/><rect x="20" y="46" width="60" height="8" rx="4" fill="#4E5C3F" transform="rotate(8 50 50)"/></svg>
+        </div>
+        <p class="product-name">にじみブラウンライナー</p>
+        <div class="product-shades"><span class="shade-count">2色展開</span></div>
+        <span class="product-price">¥770（税込）</span>
+      </div>
+
+      <div class="product-card">
+        <div class="product-visual" style="background:var(--cream-deep);">
+          <svg viewBox="0 0 100 100" fill="none"><rect x="24" y="24" width="52" height="52" rx="10" fill="#EEDFA9" stroke="#D9CB8C" stroke-width="2"/><circle cx="50" cy="50" r="15" fill="#FBF6EC"/></svg>
+        </div>
+        <p class="product-name">さらさらプレストパウダー</p>
+        <div class="product-shades"><span class="shade-count">2色展開</span></div>
+        <span class="product-price">¥1,320（税込）</span>
+      </div>
+
+      <div class="product-card">
+        <div class="product-visual" style="background:var(--butter);">
+          <svg viewBox="0 0 100 100" fill="none"><rect x="42" y="26" width="16" height="50" rx="8" fill="#E29C7C"/><rect x="42" y="20" width="16" height="14" rx="6" fill="#F0BFA8"/></svg>
+        </div>
+        <p class="product-name">うるおいリップバーム</p>
+        <div class="product-shades">
+          <span class="shade-dot" style="background:#F0BFA8;"></span>
+          <span class="shade-dot" style="background:#E8A98D;"></span>
+          <span class="shade-count">全3色</span>
+        </div>
+        <span class="product-price">¥660（税込）</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= MESSAGE / PILLARS ================= -->
+<section class="message-section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">Our Promise</span>
+      <h2 class="section-title serif">SOYOKAがたいせつにしていること</h2>
+      <p class="section-desc">はじめてのメイクも、毎日のメイクも。心も肌もかろやかでいられるように。</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3c4 3 6 6 6 10a6 6 0 01-12 0c0-4 2-7 6-10z" stroke="#EEDFA9" stroke-width="1.6"/></svg></div>
+        <h3 class="serif">肌にやさしい処方</h3>
+        <p>植物由来成分を配合し、無香料・無鉱物油・アルコールフリーにこだわりました。敏感な肌にもなじみやすい、やさしいテクスチャーです。</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12c3-6 13-6 16 0-3 6-13 6-16 0z" stroke="#EEDFA9" stroke-width="1.6"/><circle cx="12" cy="12" r="2.4" stroke="#EEDFA9" stroke-width="1.6"/></svg></div>
+        <h3 class="serif">羽みたいな、崩れにくさ</h3>
+        <p>皮脂や汗に負けにくい処方で、朝つけたそのままの表情が長く続きます。それでいてつけ心地は軽く、素肌みたいな仕上がりに。</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M6 8h12M6 12h8M6 16h10" stroke="#EEDFA9" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <h3 class="serif">お財布にやさしい価格</h3>
+        <p>学生のお小遣いでも手が届く価格で、本格的なメイクを楽しんでほしい。品質はそのままに、無駄なコストを削ってお届けしています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COLUMN / MAGAZINE ================= -->
+<section class="column-section" id="column">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">Column</span>
+      <h2 class="section-title serif">読みもの</h2>
+      <p class="section-desc">メイクのコツから成分のはなし、リアルな声まで。SOYOKAが発信するウェブコラム。</p>
+    </div>
+    <div class="column-list">
+      <a class="column-item" href="#">
+        <span class="column-cat">メイクのコツ</span>
+        <span class="column-body">
+          <span class="column-title">まぶたが一重でも似合うアイシャドウの選び方</span>
+          <span class="column-date">2026.08.22</span>
+        </span>
+        <span class="column-arrow">›</span>
+      </a>
+      <a class="column-item" href="#">
+        <span class="column-cat">成分のはなし</span>
+        <span class="column-body">
+          <span class="column-title">「無添加」ってどういうこと？SOYOKAのこだわりを聞いてみた</span>
+          <span class="column-date">2026.07.30</span>
+        </span>
+        <span class="column-arrow">›</span>
+      </a>
+      <a class="column-item" href="#">
+        <span class="column-cat">商品レビュー</span>
+        <span class="column-body">
+          <span class="column-title">新色ミルクティント、みんなの正直レビューまとめ</span>
+          <span class="column-date">2026.07.11</span>
+        </span>
+        <span class="column-arrow">›</span>
+      </a>
+      <a class="column-item" href="#">
+        <span class="column-cat">インタビュー</span>
+        <span class="column-body">
+          <span class="column-title">現役高校生が教える、放課後5分のメイク直しテク</span>
+          <span class="column-date">2026.06.18</span>
+        </span>
+        <span class="column-arrow">›</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LINE UP ================= -->
+<section class="carousel-section" id="lineup" style="background:var(--paper);">
+  <div class="wrap">
+    <div class="carousel-head">
+      <div class="section-head" style="margin-bottom:0;">
+        <span class="section-tag">Line Up</span>
+        <h2 class="section-title serif">アイテムシリーズ</h2>
+      </div>
+      <div class="carousel-nav">
+        <button class="icon-btn" id="lineupPrev" aria-label="前へ">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="icon-btn" id="lineupNext" aria-label="次へ">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="carousel-track" id="lineupTrack">
+      <div class="product-card" style="width:200px;">
+        <div class="product-visual" style="background:var(--sage-pale);height:90px;"><svg viewBox="0 0 100 100" fill="none"><rect x="24" y="24" width="52" height="52" rx="26" fill="#7C8F6B" opacity=".25"/></svg></div>
+        <p class="product-name" style="font-size:14px;">BASE<br>そよ肌シリーズ</p>
+      </div>
+      <div class="product-card" style="width:200px;">
+        <div class="product-visual" style="background:var(--blush-pale);height:90px;"><svg viewBox="0 0 100 100" fill="none"><rect x="42" y="26" width="16" height="50" rx="8" fill="#E29C7C"/></svg></div>
+        <p class="product-name" style="font-size:14px;">LIP<br>うるみリップシリーズ</p>
+      </div>
+      <div class="product-card" style="width:200px;">
+        <div class="product-visual" style="background:var(--butter);height:90px;"><svg viewBox="0 0 100 100" fill="none"><circle cx="38" cy="50" r="14" fill="#B7A46A"/><circle cx="62" cy="50" r="14" fill="#EEDFA9"/></svg></div>
+        <p class="product-name" style="font-size:14px;">EYE<br>そよ風アイシリーズ</p>
+      </div>
+      <div class="product-card" style="width:200px;">
+        <div class="product-visual" style="background:var(--cream-deep);height:90px;"><svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="22" fill="#E8A98D"/></svg></div>
+        <p class="product-name" style="font-size:14px;">CHEEK<br>ふわちゃんシリーズ</p>
+      </div>
+      <div class="product-card" style="width:200px;">
+        <div class="product-visual" style="background:var(--sage-pale);height:90px;"><svg viewBox="0 0 100 100" fill="none"><rect x="20" y="47" width="60" height="6" rx="3" fill="#4E5C3F"/></svg></div>
+        <p class="product-name" style="font-size:14px;">BROW<br>眉ラインシリーズ</p>
+      </div>
+      <div class="product-card" style="width:200px;">
+        <div class="product-visual" style="background:var(--blush-pale);height:90px;"><svg viewBox="0 0 100 100" fill="none"><path d="M50 30l6 14 15 2-11 10 3 15-13-8-13 8 3-15-11-10 15-2z" fill="#D9876A"/></svg></div>
+        <p class="product-name" style="font-size:14px;">POINT<br>ポイントメイク雑貨</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CATEGORY ================= -->
+<section class="category-section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">Find Item</span>
+      <h2 class="section-title serif">アイテムから探す</h2>
+    </div>
+    <div class="category-grid">
+      <a class="category-card" href="#"><svg viewBox="0 0 24 24" fill="none"><rect x="9" y="4" width="6" height="14" rx="3" stroke="#4E5C3F" stroke-width="1.6"/></svg><span>リップ</span></a>
+      <a class="category-card" href="#"><svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="12" r="5" stroke="#4E5C3F" stroke-width="1.6"/><circle cx="15" cy="12" r="5" stroke="#4E5C3F" stroke-width="1.6"/></svg><span>アイシャドウ</span></a>
+      <a class="category-card" href="#"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="7" stroke="#4E5C3F" stroke-width="1.6"/></svg><span>チーク</span></a>
+      <a class="category-card" href="#"><svg viewBox="0 0 24 24" fill="none"><rect x="6" y="6" width="12" height="12" rx="6" stroke="#4E5C3F" stroke-width="1.6"/></svg><span>ベースメイク</span></a>
+      <a class="category-card" href="#"><svg viewBox="0 0 24 24" fill="none"><path d="M4 15c4-8 12-8 16 0" stroke="#4E5C3F" stroke-width="1.6" stroke-linecap="round"/></svg><span>アイブロウ</span></a>
+      <a class="category-card" href="#"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v16M4 12h16" stroke="#4E5C3F" stroke-width="1.6" stroke-linecap="round"/></svg><span>ハイライト・シェーディング</span></a>
+      <a class="category-card" href="#"><svg viewBox="0 0 24 24" fill="none"><path d="M6 19l5-14 5 14M8 14h6" stroke="#4E5C3F" stroke-width="1.6" stroke-linecap="round"/></svg><span>メイク道具</span></a>
+      <a class="category-card" href="#"><svg viewBox="0 0 24 24" fill="none"><path d="M12 20c4-4 7-7 7-11a7 7 0 00-14 0c0 4 3 7 7 11z" stroke="#4E5C3F" stroke-width="1.6"/></svg><span>スキンケア</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NEWS ================= -->
+<section class="news-section" id="news">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">News</span>
+      <h2 class="section-title serif">お知らせ</h2>
+    </div>
+    <div class="news-tabs">
+      <button class="news-tab is-active" data-filter="all">すべて</button>
+      <button class="news-tab" data-filter="product">新商品</button>
+      <button class="news-tab" data-filter="campaign">キャンペーン</button>
+      <button class="news-tab" data-filter="collab">コラボ</button>
+    </div>
+    <div class="news-list" id="newsList">
+      <div class="news-item" data-cat="product">
+        <span class="news-date">2026.08.20</span>
+        <span class="news-cat">新商品</span>
+        <span>新色「みずみずしピンク」チークバームを発売しました。</span>
+      </div>
+      <div class="news-item" data-cat="collab">
+        <span class="news-date">2026.07.15</span>
+        <span class="news-cat">コラボ</span>
+        <span>人気イラストレーターとのコラボパッケージが登場しました。</span>
+      </div>
+      <div class="news-item" data-cat="campaign">
+        <span class="news-date">2026.06.02</span>
+        <span class="news-cat">キャンペーン</span>
+        <span>学生限定！公式LINE友だち登録で10%OFFクーポンを配布中です。</span>
+      </div>
+      <div class="news-item" data-cat="product">
+        <span class="news-date">2026.05.10</span>
+        <span class="news-cat">新商品</span>
+        <span>プレストパウダーがリニューアル、携帯しやすい薄型ケースになりました。</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VOICE ================= -->
+<section class="voice-section" id="voice">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">Fan's Voice</span>
+      <h2 class="section-title serif">使ってくれているみんなの声</h2>
+    </div>
+    <div class="voice-grid">
+      <div class="voice-card">
+        <span class="voice-mark">"</span>
+        <p class="voice-text">プチプラなのに毛穴が全然目立たなくてびっくりした。学校用にリピ確定です。</p>
+        <div class="voice-person">
+          <span class="voice-avatar">🌿</span>
+          <span><span class="voice-name">ののかさん</span><br><span class="voice-role">高校2年生</span></span>
+        </div>
+      </div>
+      <div class="voice-card">
+        <span class="voice-mark">"</span>
+        <p class="voice-text">バイト終わりでも崩れにくいから助かってる。色みも自然でどんな服にも合わせやすい。</p>
+        <div class="voice-person">
+          <span class="voice-avatar">🌿</span>
+          <span><span class="voice-name">ゆいさん</span><br><span class="voice-role">大学1年生</span></span>
+        </div>
+      </div>
+      <div class="voice-card">
+        <span class="voice-mark">"</span>
+        <p class="voice-text">色みが絶妙にくすみすぎなくて可愛い。パッケージも部屋に置いておきたくなるデザイン。</p>
+        <div class="voice-person">
+          <span class="voice-avatar">🌿</span>
+          <span><span class="voice-name">まなさん</span><br><span class="voice-role">専門学校生</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SOCIAL ================= -->
+<section class="social-section">
+  <div class="wrap">
+    <div class="section-head" style="align-items:center;text-align:center;margin:0 auto;">
+      <span class="section-tag">Follow Us</span>
+      <h2 class="section-title serif">SOYOKAのSNS</h2>
+    </div>
+    <div class="social-row">
+      <a class="social-pill" href="#"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#4E5C3F" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="#4E5C3F" stroke-width="1.6"/></svg>Instagram</a>
+      <a class="social-pill" href="#"><svg viewBox="0 0 24 24" fill="none"><path d="M9 8v9a3 3 0 103-3V4a6 6 0 006 6" stroke="#4E5C3F" stroke-width="1.6" stroke-linecap="round"/></svg>TikTok</a>
+      <a class="social-pill" href="#"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="6" stroke="#4E5C3F" stroke-width="1.6"/></svg>公式LINE</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo serif">SOYOKA</div>
+        <p class="footer-desc">10代・20代のための、ナチュラルでプチプラなコスメブランド。そよ風みたいに軽やかな、心地いいメイクを届けます。</p>
+      </div>
+      <div class="footer-col">
+        <h4>アイテム</h4>
+        <ul>
+          <li><a href="#arrivals">新作アイテム</a></li>
+          <li><a href="#lineup">シリーズ一覧</a></li>
+          <li><a href="#">店舗・取扱店</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>ブランド</h4>
+        <ul>
+          <li><a href="#voice">SOYOKAについて</a></li>
+          <li><a href="#column">コラム</a></li>
+          <li><a href="#news">お知らせ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>サポート</h4>
+        <ul>
+          <li><a href="#">よくある質問</a></li>
+          <li><a href="#">お問い合わせ</a></li>
+          <li><a href="#">採用情報</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Copyright SOYOKA All Rights Reserved.</span>
+      <div class="footer-legal">
+        <a href="#">個人情報取り扱いについて</a>
+        <a href="#">特定商取引法に基づく表記</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // mobile nav toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const mainNav = document.getElementById('mainNav');
+  menuToggle.addEventListener('click', () => {
+    const isOpen = mainNav.classList.toggle('is-open');
+    menuToggle.setAttribute('aria-expanded', isOpen);
+  });
+  mainNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mainNav.classList.remove('is-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  // carousel scroll buttons
+  function wireCarousel(trackId, prevId, nextId){
+    const track = document.getElementById(trackId);
+    const prev = document.getElementById(prevId);
+    const next = document.getElementById(nextId);
+    const step = () => track.clientWidth * 0.7;
+    prev.addEventListener('click', () => track.scrollBy({left:-step(), behavior:'smooth'}));
+    next.addEventListener('click', () => track.scrollBy({left:step(), behavior:'smooth'}));
+  }
+  wireCarousel('arrivalsTrack','arrivalsPrev','arrivalsNext');
+  wireCarousel('lineupTrack','lineupPrev','lineupNext');
+
+  // news tab filter
+  const tabs = document.querySelectorAll('.news-tab');
+  const items = document.querySelectorAll('.news-item');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('is-active'));
+      tab.classList.add('is-active');
+      const filter = tab.dataset.filter;
+      items.forEach(item => {
+        item.hidden = !(filter === 'all' || item.dataset.cat === filter);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
